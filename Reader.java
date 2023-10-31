@@ -48,7 +48,20 @@ public class Reader {
         } catch (IOException e) {
             System.err.printf("Erro na abertura do arquivo: %s.\n", e.getMessage());
         }
-
+        normalizer(amostras);
         return amostras;
+    }
+
+    private void normalizer(Amostra[] amostras) {
+        for(int x=0; x<amostras[0].input.length; x++){
+            int imax=0, imin=0;
+            for(int i=1; i<amostras.length; i++){
+                if(amostras[imax].input[x]<amostras[i].input[x]) imax = i;
+                if(amostras[imin].input[x]>amostras[i].input[x]) imin = i;
+            }
+            for(int i=0; i<amostras.length; i++){
+                amostras[i].input[x] = (float)(amostras[i].input[x]-amostras[imin].input[x])/(float)(amostras[imax].input[x]-amostras[imin].input[x]);
+            }
+        }
     }
 }
