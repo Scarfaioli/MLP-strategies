@@ -1,4 +1,3 @@
-
 import java.util.Arrays;
 import java.util.Random;
 
@@ -177,9 +176,9 @@ public class MainMLP {
 		double[] ret = new double[out.length];
 		for (int i = 0; i < ret.length; i++) {
 			if (out[i] >= 0.5) {
-				ret[i] = 1;
+				ret[i] = 0.995;
 			} else {
-				ret[i] = 0;
+				ret[i] = 0.005;
 			}
 		}
 		return ret;

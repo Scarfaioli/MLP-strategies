@@ -21,19 +21,19 @@ public class Reader {
                     if(i==(s.length-1)){
                         switch(s[i]){
                             case "cp":
-                                output[0]=1;
-                                output[1]=0;
-                                output[2]=0;
+                                output[0]=0.995;
+                                output[1]=0.005;
+                                output[2]=0.005;
                                 break;
                             case "pp":
-                                output[0]=0;
-                                output[1]=1;
-                                output[2]=0;
+                                output[0]=0.005;
+                                output[1]=0.995;
+                                output[2]=0.005;
                                 break;
                             case "im":
-                                output[0]=0;
-                                output[1]=0;
-                                output[2]=1;
+                                output[0]=0.005;
+                                output[1]=0.005;
+                                output[2]=0.995;
                                 break;
                         }
                     }else{
