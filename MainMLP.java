@@ -6,9 +6,10 @@ public class MainMLP {
 	public static void main(String[] args) {
 		Reader r = new Reader();
 		Amostra[] database = r.readDataSet();
+		int var = -2;
 
 		MLP rna = new MLP(database[0].input.length,
-			(int) (database[0].input.length + database[0].output.length) / 2,
+			(int) ((database[0].input.length + database[0].output.length) / 2)+var,
 			database[0].output.length, 0.3);
 
 		randomizarBase(database);
@@ -72,7 +73,7 @@ public class MainMLP {
 
 
 			System.out.printf("Epoca: %6d - erroApEpocaTreino: %.10f - erroClEpocaTreino: %d"+
-			 		"- erroApEpocaTeste: %.10f - erroClEpocaTeste: %d \n", e, erroApEpocaTreino, 
+			 		" - erroApEpocaTeste: %.10f - erroClEpocaTeste: %d \n", e, erroApEpocaTreino, 
 					(int) erroClEpocaTreino, erroApEpocaTeste, (int) erroClEpocaTeste);
 		}
 	}
