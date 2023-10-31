@@ -62,7 +62,10 @@ public class MLP {
 		//Calcular os deltas da camada out
 		double [] Do = new double[this.qtdOut];
 		for (int j = 0; j < Do.length; j++) {
-			Do[j] = out[j] * (1 - out[j]) * (y[j] - out[j]);
+			//int sinal=1;
+			//if((y[j]-out[j])<0) sinal = -1;
+			//Do[j] = out[j] * (1 - out[j]) * (y[j] - out[j])*sinal;
+			Do[j] = out[j]*(1-out[j])*(y[j]-out[j]);
 		}
 		
 		double [] Dh = new double[this.qtdH];
