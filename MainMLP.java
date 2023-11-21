@@ -10,11 +10,11 @@ public class MainMLP {
 
 		MLP rna = new MLP(database[0].input.length,
 			(int) ((database[0].input.length + database[0].output.length) / 2)+var,
-			database[0].output.length, 0.3);
+			database[0].output.length, 0.01);
 
 		randomizarBase(database);
 			
-		for (int e = 0; e < 10000; e++) {
+		for (int e = 0; e < 100000; e++) {
 			double erroApEpocaTreino = 0;
 			double erroClEpocaTreino = 0;
 
